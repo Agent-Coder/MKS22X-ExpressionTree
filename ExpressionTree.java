@@ -7,7 +7,7 @@ public class ExpressionTree{
   public String toString(){
     String s="";
     if(isValue()){
-      s+=getValue()+" ";
+      s+=getValue();
     }
     else{
       s+="("+getLeft().toString()+" "+getOp()+" "+getRight().toString()+")";

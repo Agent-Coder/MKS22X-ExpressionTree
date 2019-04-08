@@ -25,15 +25,21 @@ public class ExpressionTree{
     else{
       s+=getLeft().toStringPostfix()+" "+getRight().toStringPostfix()+" "+getOp()+" ";
     }
-    return s;
+    return s.substring(0,s.length()-1);
   }
 
   /*return the expression as a prefix notation string without parenthesis*/
   /* The sample tree would be: "+ 3 * 2 10"     */
 
   public String toStringPrefix(){
-    /*you are to write this method*/
-    return "";
+    String s="";
+    if(isOp()){
+      s+=getOp()+" "+getLeft().toStringPrefix()+" "+getRight().toString()+" ";
+    }
+    else{
+      s+=getValue()+" ";
+    }
+    return s.substring(0,s.length()-1);
   }
 
   /*return the value of the specified expression tree*/
